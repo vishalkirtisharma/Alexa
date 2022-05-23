@@ -1,4 +1,6 @@
+#  Windows logo key + R, type shell:startup,
 # First Install below three require library
+
 # pip install pyttsx3
 # pip install PyAudio
 # pip install SpeechRecognition
@@ -15,6 +17,7 @@ import datetime
 import wikipedia
 import pyjokes
 import os
+import urllib
 
 
 listener= sr.Recognizer()
@@ -26,7 +29,7 @@ engine.setProperty('voice',voices[1].id) # First once related to voice product t
 
 
 # Create Function for various Purpose instead of repeat your code. 
-def talk(text='  Hi Vishal, What may i help you'): 
+def talk(text=f'  Hi {os.getlogin()}, What may i help you'): 
     engine.say(text)
     engine.runAndWait()
 
@@ -42,7 +45,7 @@ def take_command():
             command= command.lower()
             if 'alexa' in command:            
                 command= command.replace('alexa','')
-                print(command)
+                
     except:
         command=''
 
@@ -78,17 +81,15 @@ def run_alex():
             talk(pyjokes.get_joke())
         elif 'quit' in command or 'exit' in command:
             break
-        elif 'shut down' in command  and 'computer' in command:
+        elif ('shut down' in command or 'turn off' in command)  and ('computer' in command or 'system' in command):
             os.system('shutdown /s /t 1')
         
-        elif 'restart' in command and 'computer' in command:
-            os.system('restart /s /t 1')
+        elif ('restart' in command or 'turn off' in command)  and ('computer' in command or 'system' in command):
+            os.system('shutdown /r /t 1')
         else:
-            print(command)
+            print(command+ "is not a valid . Please repate your command")
             talk(command + "is not a valid . Please repate your command")
         
-
-
 
 
 
