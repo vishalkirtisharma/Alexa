@@ -85,7 +85,7 @@ def run_alex():
             os.system('shutdown /s /t 1')
         
         elif ('restart' in command or 'turn off' in command)  and ('computer' in command or 'system' in command):
-            os.system('shutdown /r /t 1')
+            os.system('shutdown /r /t 1')                
         else:
             print(command+ "is not a valid . Please repate your command")
             talk(command + "is not a valid . Please repate your command")

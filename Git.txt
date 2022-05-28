@@ -1,0 +1,120 @@
+First time configration, to check that change made by which user.
+
+# Add a user name to git
+	git config --global user.name abc
+
+# Add a user Email to git
+	git config --global user.email abc@gmail.com
+
+
+# To check user name and email press
+	git config --global user.name
+	git config --global user.email
+
+# We can open VS code with Help of git
+	code .
+
+# First we need to initialized empty git in folder to get git in folder.
+	git init
+
+
+#Check repo with
+    ls -lart
+
+# We can check status of file with command of
+	git status
+
+# we need to commit to file
+	git commit
+
+
+# Transfer file to stagging area via
+	git add (filename or -A for all file)
+
+# Transfer file to commit area for initial commit via
+	git commit and type Initial commit(Msg name or change name) and then esc button and :wq
+	or use
+	git commit -m "Your msg"
+
+# Terminal can be clear with
+	clear
+
+
+# GIT checkout can be restore.
+	git checkout filename or -f(Checkout all file) and then logout via press "q"
+
+# Filter git log commit via
+	git log -p - number of commit what to show.
+
+# Use git diff for check difference of last commit and current file. That will compare to working directory to staging area.
+	git diff
+
+# We can compare that data to stagging area to commit area via
+	git diff --staged
+
+# We can direct file to commit via use.
+	git commit -a -m "Your msg"
+
+# We can remove file via
+	git rm (will remove from staging and working directory)
+	git rm --cached (Will remove from staging area only not in working directory or folder.)
+# We can check file status with name via
+	git status -s
+
+# If we want to ignore file for git
+	create file with name of .gitignore
+		add file name that will be ignore via git for all working directory such as "mylog.txt"
+		or if we want to avoid only for current folder/root we can use "/mylog.txt"
+		or if want to avoid all file having .log their extention we can use "*.log"
+		or we can avoid folder with folder name  and /	 such as "ignore/"
+
+# We can create branch with using
+	git branch features1 
+
+# Check available branch with
+	git branch
+
+# We can switch branch with
+	git checkout branch_name
+
+# We can merge two branched with using of
+	git merge branch_name
+
+# Create git branch and directly go-out that file with
+	git checkout -b branchname
+
+# Remote Repository 
+	git remote add origin "url"
+# View Remote Repository via
+	git remote
+	git remote -v
+
+
+# Generating a new SSH key
+	 ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# Adding your SSH key to the ssh-agent
+	eval "$(ssh-agent -s)"
+	Agent pid 59566
+
+# then
+
+	ssh-add ~/.ssh/id_ed25519
+
+#	run command with
+	cat ~/.ssh/id_ed25519\
+	
+# Copy overall key and paste to github Add SSH keys of setting pannel
+
+# then
+	~/.ssh/id_ed25519.pub
+
+
+# Push file with
+	git push -u origin master
+
+# Change URL of origin via
+	git remote set-url origin "new url"
+
+# we can pull all branch with
+	git push origin master
